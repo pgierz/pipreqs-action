@@ -10,7 +10,7 @@ def read_requirements(rpath="requirements.txt"):
     with open(rpath, "r", encoding="utf-8") as requirements:
         return requirements.readlines()
 
-def read_old_conda(cfile="ci/..."):
+def read_old_conda(cfile):
     with open(cfile, "r", encoding="utf-8") as conda_reqs:
         return yaml.safe_load(conda_reqs.read())
 
@@ -26,10 +26,10 @@ def write_new_conda(cfile, reqs):
 
 
 def main():
-    pip_reqs = read_requirements()
-    old_conda = read_old_conda()
-    new_reqs = replace_requirements(old_conda, pip_reqs)
     path = os.environ.get("CONDA_REQS", "environment.yml")
+    pip_reqs = read_requirements()
+    old_conda = read_old_conda(path)
+    new_reqs = replace_requirements(old_conda, pip_reqs)
     write_new_conda(new_reqs, path)
     print(f"Wrote new file: {path}")
 
