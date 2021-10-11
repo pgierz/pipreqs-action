@@ -26,7 +26,7 @@ def write_new_conda(cfile, reqs):
 
 
 def main():
-    path = os.environ.get("CONDA_REQS", "environment.yml")
+    path = os.environ.get("INPUT_CONDA_REQS", "environment.yml")
     pip_reqs = read_requirements()
     old_conda = read_old_conda(path)
     new_reqs = replace_requirements(old_conda, pip_reqs)
