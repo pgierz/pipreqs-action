@@ -1,7 +1,8 @@
 #!/bin/sh -l
 
 pipreqs --force --no-pin --savepath $INPUT_REQUIREMENT_PATH $INPUT_PROJECT_PATH
-
+python --version
+python recreate_conda_reqs.py
 set -e
 sh -c "ls"
 

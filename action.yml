@@ -16,6 +16,10 @@ inputs:
     description: "Name of the project to include in the commit"
     required: true
     default: ""
+  CONDA_REQS:
+    description: "Where to write the conda.yml"
+    required: true
+    default: "environment.yml"
 
 
 runs:
