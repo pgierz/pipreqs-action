@@ -4,7 +4,7 @@ COPY LICENSE README.md entrypoint.sh recreate_conda_reqs.py /
 
 RUN apk add python3
 RUN pip3 install pipreqs
-RUN pip3 install yaml
+RUN pip3 install pyyaml
 
 RUN chmod +x /entrypoint.sh
 
