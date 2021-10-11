@@ -21,8 +21,7 @@ def replace_requirements(old_reqs, new_reqs):
     return old_reqs
 
 def write_new_conda(cfile, reqs):
-    with open(cfile, "w", encoding="utf-8") as cfile:
-        yaml.dump(reqs, cfile)
+    yaml.safe_dump(reqs, cfile)
 
 
 def main():
@@ -30,7 +29,7 @@ def main():
     pip_reqs = read_requirements()
     old_conda = read_old_conda(path)
     new_reqs = replace_requirements(old_conda, pip_reqs)
-    write_new_conda(new_reqs, path)
+    write_new_conda(path, new_reqs)
     print(f"Wrote new file: {path}")
 
 
