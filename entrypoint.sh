@@ -3,8 +3,8 @@
 pipreqs --force --no-pin --savepath $INPUT_REQUIREMENT_PATH $INPUT_PROJECT_PATH
 set -e
 echo $PATH
-python --version
-python recreate_conda_reqs.py
+python3 --version
+python3 recreate_conda_reqs.py
 sh -c "ls"
 
 sh -c "git config --global user.name '${GITHUB_ACTOR}' \
