@@ -21,7 +21,8 @@ def replace_requirements(old_reqs, new_reqs):
     return old_reqs
 
 def write_new_conda(cfile, reqs):
-    yaml.safe_dump(reqs, cfile)
+    with open(cfile, "w") as cfile:
+        yaml.safe_dump(reqs, cfile)
 
 
 def main():
