@@ -1,9 +1,10 @@
 #!/bin/sh -l
 
 pipreqs --force --no-pin --savepath $INPUT_REQUIREMENT_PATH $INPUT_PROJECT_PATH
+set -e
+echo $PATH
 python --version
 python recreate_conda_reqs.py
-set -e
 sh -c "ls"
 
 sh -c "git config --global user.name '${GITHUB_ACTOR}' \
