@@ -31,8 +31,8 @@ def main():
     new_reqs = replace_requirements(old_conda, pip_reqs)
     path = os.environ.get("CONDA_REQS", "environment.yml")
     write_new_conda(new_reqs, path)
+    print(f"Wrote new file: {path}")
 
 
-
-
-
+if __name__ == "__main__":
+    main()
