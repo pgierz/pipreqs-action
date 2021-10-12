@@ -9,7 +9,7 @@ import yaml
 
 def read_requirements(rpath="requirements.txt"):
     with open(rpath, "r", encoding="utf-8") as requirements:
-        return requirements.readlines()
+        return [l.strip() for l in requirements.readlines()]
 
 
 def read_old_conda(cfile):
