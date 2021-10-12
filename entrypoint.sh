@@ -11,4 +11,4 @@ sh -c "cat $INPUT_CONDA_REQS"
 
 sh -c "git config --global user.name '${GITHUB_ACTOR}' \
       && git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'"
-echo `git pull && git add -A && git commit -m "Updated $INPUT_PROJECT_NAME requirements file" && git push -u origin HEAD`
+echo `git fetch && git add -A && git commit -m "Updated $INPUT_CONDA_REQS requirements file" && git push -u origin HEAD`
