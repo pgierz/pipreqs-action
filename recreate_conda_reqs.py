@@ -6,9 +6,11 @@ import os
 
 import yaml
 
+
 def read_requirements(rpath="requirements.txt"):
     with open(rpath, "r", encoding="utf-8") as requirements:
         return requirements.readlines()
+
 
 def read_old_conda(cfile):
     with open(cfile, "r", encoding="utf-8") as conda_reqs:
@@ -20,9 +22,10 @@ def replace_requirements(old_reqs, new_reqs):
     old_reqs["dependencies"] = new_reqs
     return old_reqs
 
+
 def write_new_conda(cfile, reqs):
     with open(cfile, "w") as cfile:
-        yaml.safe_dump(reqs, cfile)
+        yaml.safe_dump(reqs, cfile, sort_keys=False)
 
 
 def main():
