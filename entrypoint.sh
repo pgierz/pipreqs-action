@@ -1,5 +1,6 @@
 #!/bin/sh -l
 
+echo `git pull`
 pipreqs --force --no-pin --savepath $INPUT_REQUIREMENT_PATH $INPUT_PROJECT_PATH
 set -e
 echo $PATH
